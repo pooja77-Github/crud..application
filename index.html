@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <title>userdata</title>
+</head>
+<body>
+  <div class="header">
+<h5>User</h5>
+  </div>  
+  <div class="upper-btn">
+<div class="btn-left">
+    <button id="add-btn"><i class="fa fa-plus"></i>Add User</button>
+    <button  id="clear-all"><i class="fa fa-sort"></i> &nbsp; CLear All Data</button>
+   
+</div>
+<div class="btn-right">
+    <i class="fa fa-search"></i>
+    <input type="text" id="emid" placeholder="search user by email...">
+    <button>Search</button>
+</div>
+  </div>
+  <div class="table-box">
+    <table id="table-data">
+        <tr>
+       <th>S.no</th>
+       <th>Profile</th>
+       <th>NAME</th>
+       <th>E-MAIL</th>
+       <th>PHONE-NO</th>
+       <th>PASSWORD</th>
+       <th>Action</th>
+    </tr>
+    
+    <tbody id="table-data"></tbody>
+    </table>
+  </div>
+  <div class="modal">
+    <i class=" fa fa-times-circle close-icon"></i>
+<div class="left-modal">
+    <div class="img-box">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAMFBMVEXk5ueutLfp6+yrsbSxt7rh4+S+wsXS1dfW2drP0tS6v8LLz9HEyMrd4OG0ur3IzM7YRWk6AAAC3klEQVR4nO2ay5akIAxAISAiCv7/3w52PY7l2JBQCTML7rI33g4QklBKDQaDwWAwGAwGg8GgK6DivG7OuW31EaD/9yfvtDYvtN1jb4Xd5u+eMSbNXQUu339aWN9pOcDfCvxIuKmLwv6bwCMQ8gLgCgaHxCK+GKls0MEh1AyywyrpAFvdIDsI7gdYMAYZuXMRkQY6SS0FJKRB3pJCCjM2CHJLgQ5CDsMmshTYvfhA5OIkBCGHYRcw8BSDDP9K4LLSKQz8+QloBnlDsiug09KLxK5AOw9HGNgViFtBYjMEooFA3UDKCj8K7AmSaqC141agboWswGzQoBCGghbYC5aswH4i6HmBvZZ3ZAXuRhtKneS9Anv56KkKltuAfiTYMxOhiXgg0UpQuggtUS4oNdEMgkAjUZttXBREumtS9SjT2FLCIDVimNAKhv9EPoAV68CfGd8O1VnX00BqvKCwB9OwVwpnML2t4e+jPkDkSCs8BIbajWkEbsgr0ZYkDHvResdUmMCKDFduyPnhXsLY2Ot9CG7fREyauz5QTWvSJ4tsFDq8RHwCKi7u/f9vvtsSXDSyR2aCf/BEqI6PTjH6J9lDdfQ4vu1Xl5LVr4fKIyXaFPY5TkrcA5TfQzL3hzL/2YZtlrSAuIZfvv4hkjenyKLk71uNLFmy5ubZg+Ed9vvvWCycNyasyHLp08JuTJEAtdACcA7FxpKx5uLlXJPQ+7eRgIh4Gy1LfPmKTR9s3El801TEll1442Bab3GgPgUVJNqKKZZFeDu0lJS0Xr7u0NBc8Brohvbi27P4N4bmwLwKTyhNDutOPIHfD0AcrqHBt9xRRkDjBw/YQUaTA04BPc5pATeOlDRAPRFQX+ipIE4FfrLXRv3WlA4CJgz0ZzAi1cGsVFY6KVTyk8zlcHGoKMgb1FaC/HORFoVyFUf+uUgL5Ypa/EgelI8lf7F0Q/muCtrKU36tgC4UozAYDAaD/4U//rMgRSTDXgQAAAAASUVORK5CYII=" id="profile-pic">
+        <i class="fa fa-plus"></i>
+       <input type="file" id="upload-file">
+       <div class="line"></div>
+    </div>
+</div>
+<div class="right-modal">
+    <form id="register-form" >
+    <div class="input-box">
+        <div class="space">
+        <label for="text">NAME</label>
+        <input type="text" id="name" minlength="3" max="8" required>
+        </div>
+        <div class="space">
+        <label for="text">E-mail</label> 
+        <input type="email" name="xyz@gmail.com" id="email" required>
+        </div>
+        <div class="space">
+        <label for="number">PHONE-NO</label> 
+        <input type="number" name="quantity" id="num" minlength="10" maxlength="10" required>
+         </div>
+         <div class="space">
+         <label for="number">PASSWORD</label> 
+        <input type="password" name="pass" id="passid" minlength="8" maxlength="25"  required>
+        
+        
+        </div>
+        <button  id="sub-btn"  class="space-button">submit</button>
+        <button  id="updt-btn"  class="update-button">update</button>
+    </div>
+</div>
+</form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
